@@ -262,7 +262,7 @@ fn pattern_to_string(pattern: &PatternBuilder) -> String {
 #[tokio::main]
 async fn main() {
     let token = env::var("DISCORD_TOKEN").expect("Expected a token in the environment");
-    let id = env::var("DISCORD_TOKEN")
+    let id = env::var("APPLICATION_ID")
         .expect("Expected an application ID in the environment")
         .parse()
         .unwrap();
