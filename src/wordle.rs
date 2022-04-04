@@ -11,7 +11,7 @@ pub struct Wordle {
 
 impl Wordle {
     pub fn new() -> Wordle {
-        let data = fs::read("data.bin").unwrap();
+        let data = fs::read("./data.bin").unwrap();
 
         let words_len = u16::from_be_bytes([data[0], data[1]]) as usize;
         let targets_len = u16::from_be_bytes([data[2], data[3]]) as usize;

@@ -86,7 +86,10 @@ impl EventHandler for Handler {
                                         history.len() + 1,
                                         &wordle.guess().to_string()
                                     ),
-                                    pattern_to_string(&pattern),
+                                    format!(
+                                        "Pattern: {}", 
+                                        &pattern_to_string(&pattern)
+                                    ),
                                     false,
                                 ));
                                 wordle.update(pattern.get_pattern().unwrap());
