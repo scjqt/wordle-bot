@@ -1,1 +1,1 @@
-web: main
+web: ./target/release/main
