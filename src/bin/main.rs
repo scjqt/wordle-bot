@@ -276,4 +276,6 @@ async fn main() {
     if let Err(why) = client.start().await {
         println!("Client error: {:?}", why);
     }
+
+    println!("success 1");
 }
