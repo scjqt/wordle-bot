@@ -261,18 +261,12 @@ fn pattern_to_string(pattern: &PatternBuilder) -> String {
 
 #[tokio::main]
 async fn main() {
-    println!("success 1");
-
     let token = env::var("DISCORD_TOKEN").expect("Expected a token in the environment");
-
-    println!("success 2");
 
     let id = env::var("APPLICATION_ID")
         .expect("Expected an application ID in the environment")
         .parse()
         .unwrap();
-
-    println!("success 3");
 
     let mut client = Client::builder(&token)
         .application_id(id)
@@ -280,12 +274,7 @@ async fn main() {
         .await
         .expect("Error creating client");
 
-    println!("success 4");
-
     if let Err(why) = client.start().await {
         println!("Client error: {:?}", why);
     }
-
-    println!("success 5");
-
 }
