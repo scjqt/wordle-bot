@@ -1,1 +1,1 @@
-release: cargo run --release --bin main
+web: ./target/release/main.exe
