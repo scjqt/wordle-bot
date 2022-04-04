@@ -1,4 +1,4 @@
-use std::{env, sync::Arc, time::Duration};
+use std::{sync::Arc, time::Duration};
 
 use serenity::{
     async_trait,
@@ -261,12 +261,9 @@ fn pattern_to_string(pattern: &PatternBuilder) -> String {
 
 #[tokio::main]
 async fn main() {
-    let token = env::var("DISCORD_TOKEN").expect("Expected a token in the environment");
-
-    let id = env::var("APPLICATION_ID")
-        .expect("Expected an application ID in the environment")
-        .parse()
-        .unwrap();
+    let mut ids = include_str!("ids.txt").split_whitespace();
+    let token = ids.next().unwrap();
+    let id = ids.next().unwrap().parse().unwrap();
 
     let mut client = Client::builder(&token)
         .application_id(id)
